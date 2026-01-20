@@ -1,0 +1,14 @@
+# Git 相关
+.git
+.github
+.gitignore
+
+# 文档
+README.md
+*.md
+
+# Docker 配置文件
+docker-compose.yml
+
+# macOS 系统文件
+.DS_Store
