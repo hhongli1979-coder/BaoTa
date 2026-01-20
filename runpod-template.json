@@ -1,0 +1,48 @@
+{
+  "name": "宝塔面板 BaoTa Panel",
+  "description": "一键部署宝塔面板 - 简单好用的Linux服务器运维管理面板",
+  "dockerImage": "hhongli1979coder/baota:latest",
+  "containerDiskInGb": 20,
+  "volumeInGb": 50,
+  "volumeMountPath": "/workspace",
+  "ports": [
+    {
+      "containerPort": 8888,
+      "protocol": "http",
+      "description": "宝塔面板管理界面"
+    },
+    {
+      "containerPort": 80,
+      "protocol": "http",
+      "description": "HTTP 服务"
+    },
+    {
+      "containerPort": 888,
+      "protocol": "http",
+      "description": "phpMyAdmin 数据库管理"
+    },
+    {
+      "containerPort": 8080,
+      "protocol": "http",
+      "description": "备用 HTTP 端口"
+    },
+    {
+      "containerPort": 88,
+      "protocol": "http",
+      "description": "备用端口"
+    },
+    {
+      "containerPort": 21,
+      "protocol": "tcp",
+      "description": "FTP 服务"
+    }
+  ],
+  "env": [
+    {
+      "key": "TZ",
+      "value": "Asia/Shanghai",
+      "description": "时区设置"
+    }
+  ],
+  "startScript": "/start.sh"
+}

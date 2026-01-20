@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  baota:
+    build: .
+    image: hhongli1979coder/baota:latest
+    container_name: baota-panel
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - "8888:8888"  # 宝塔面板
+      - "80:80"      # HTTP
+      - "888:888"    # phpMyAdmin
+      - "8080:8080"  # 备用端口
+      - "88:88"      # 备用端口
+      - "21:21"      # FTP
+    volumes:
+      - ./www:/www
+      - ./workspace:/workspace
+    environment:
+      - TZ=Asia/Shanghai
